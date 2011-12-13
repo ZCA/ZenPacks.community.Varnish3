@@ -1,0 +1,3 @@
+[zenoss.zenpacks]
+ZenPacks.community.Varnish3 = ZenPacks.community.Varnish3
+
