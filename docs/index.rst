@@ -82,10 +82,34 @@ Initialize a new GIT Repo in your ZenPack Folder
 As Zenoss seems to be making the move to git as outline in `ZenPack Development Process`_
 we are going to cooperate with that effort :) The `ZenPack Development Process`_ 
 document does a good job already of providing both step-by-step as well as in-depth
-explanation of the process. For me I've got the GIT client on my host machine, rather
-than my Zenoss VM, but since we are using shared folders it should work equally well
+explanation of the process. For me I've got the GIT client on my Zenoss VM, rather
+than my host PC, but since we are using shared folders it should work equally well
 from either. Here is what I ran to initialize the new repo::
+   cd /media/zenpack_git_sources/ZenPacks.community.Varnish3
    git init
+   
+Next I grabbed the 'master' .gitignore file::
+   cd /media/zenpack_git_sources/ZenPacks.community.Varnish3
+   https://raw.github.com/zenoss/Community-ZenPacks-SubModules/master/.gitignore
+
+Additionally I use Eclipse with the pydev module on my PC as my IDE. As a result 
+there are a couple of extra files we will want to add to the .gitignore file. 
+If you use some other IDE (or none at all) you can skip the following lines::
+   cd /media/zenpack_git_sources/ZenPacks.community.Varnish3
+   echo .pydevproject >> .gitignore
+   echo .project >> .gitignore
+   
+Now add everything and do a commit. You should note that this commit does **not** 
+push anything up to github, it simply commits the files into your local repo::
+   git add -A
+   git status
+   git commit -m 'Commiting the initial empty shell'
+   
+
+   
+
+   
+
 
 
 

@@ -8,3 +8,4 @@ setuptools*
 *EGG-INFO*
 *dist
 .pydevproject
+.project
