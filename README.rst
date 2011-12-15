@@ -27,16 +27,18 @@ Requirements & Dependencies
 * External Dependencies: SSH Access to Varnish Server
 * ZenPack Dependencies: None
 
-Installation
-============
-Normal Installation (packaged egg)
-----------------------------------
+Download
+========
 Download the appropriate package for your Zenoss version from the list
 below.
 
 * Zenoss 3.0+ `Latest Package for Python 2.6`_
-  
-Then copy it to your Zenoss server and run the following commands as the zenoss
+
+Installation
+============
+Normal Installation (packaged egg)
+----------------------------------
+Copy the downloaded .egg to your Zenoss server and run the following commands as the zenoss
 user::
 
    zenpack --install <package.egg>
@@ -80,6 +82,7 @@ creating the new datapoint.
 When adding datapoints, be sure to add them to the existing datasource. There is
 no need to create a second datasource. Keeping a single datasource will keep 
 the number of SSH calls needed to a minimum.
+
 
 
 Change History
