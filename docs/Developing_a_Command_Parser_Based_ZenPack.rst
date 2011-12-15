@@ -102,7 +102,7 @@ from either. Here is what I ran to initialize the new repo::
 Next I grabbed the 'master' .gitignore file::
 
    cd /media/zenpack_git_sources/ZenPacks.community.Varnish3
-   https://raw.github.com/zenoss/Community-ZenPacks-SubModules/master/.gitignore
+   wget https://raw.github.com/zenoss/Community-ZenPacks-SubModules/master/.gitignore
 
 Additionally I use Eclipse with the pydev module on my PC as my IDE. As a result 
 there are a couple of extra files we will want to add to the .gitignore file. 
@@ -157,11 +157,6 @@ newb friendly so thats where I hope to bridge the gap.
 
 Building The Pieces
 -------------------
-OK, now that we know *what* we want, lets figure out how to get there. Lets start
-slow and do something easy. As we mentioned before we want to create a new device class.
-I've noticed other packs tell you to manually create a device class named 'xyz'.
-That drives me nuts. Lets create the device class during installation of our ZenPack.
-
 
 The Command Parser
 ++++++++++++++++++
