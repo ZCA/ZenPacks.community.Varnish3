@@ -283,6 +283,9 @@ True
 <property type="int" id="width" mode="w" >
 500
 </property>
+<property type="string" id="units" mode="w" >
+Requests/Sec
+</property>
 <property type="boolean" id="log" mode="w" >
 False
 </property>
@@ -299,7 +302,7 @@ False
 True
 </property>
 <tomanycont id='graphPoints'>
-<object id='cache_hit' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<object id='Cache Hits' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -319,13 +322,42 @@ ${graphPoint/id}
 -1
 </property>
 <property type="string" id="dpName" mode="w" >
-Test_cache_hit
+Varnish3Stats_cache_hit
 </property>
 <property type="string" id="cFunc" mode="w" >
 AVERAGE
 </property>
 </object>
-<object id='cache_hitpass' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<object id='Cache Misses' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+Varnish3Stats_cache_miss
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='Hits for Pass' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
 <property type="long" id="sequence" mode="w" >
 2
 </property>
@@ -354,35 +386,6 @@ Varnish3Stats_cache_hitpass
 AVERAGE
 </property>
 </object>
-<object id='cache_miss' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
-<property type="long" id="sequence" mode="w" >
-1
-</property>
-<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
-LINE
-</property>
-<property type="long" id="lineWidth" mode="w" >
-1
-</property>
-<property type="boolean" id="stacked" mode="w" >
-False
-</property>
-<property type="string" id="format" mode="w" >
-%5.2lf%s
-</property>
-<property type="string" id="legend" mode="w" >
-${graphPoint/id}
-</property>
-<property type="long" id="limit" mode="w" >
--1
-</property>
-<property type="string" id="dpName" mode="w" >
-Test_cache_miss
-</property>
-<property type="string" id="cFunc" mode="w" >
-AVERAGE
-</property>
-</object>
 </tomanycont>
 </object>
 <object id='Varnish3 Backend Too Late' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
@@ -391,6 +394,9 @@ AVERAGE
 </property>
 <property type="int" id="width" mode="w" >
 500
+</property>
+<property type="string" id="units" mode="w" >
+Responses/Sec
 </property>
 <property type="boolean" id="log" mode="w" >
 False
@@ -411,7 +417,7 @@ True
 1
 </property>
 <tomanycont id='graphPoints'>
-<object id='backend_toolate' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<object id='Backend Too Late' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -439,12 +445,104 @@ AVERAGE
 </object>
 </tomanycont>
 </object>
+<object id='Varnish3 Cache Hit Rate' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+%
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+6
+</property>
+<tomanycont id='graphPoints'>
+<object id='Cache Hit Percentage' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="rpn" mode="w" >
+client_req,/,100,*
+</property>
+<property type="string" id="dpName" mode="w" >
+Varnish3Stats_cache_hit
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='client_req' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+DONTDRAW
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+Varnish3Stats_client_req
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
 <object id='Varnish3 Client Connections' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
 <property type="int" id="height" mode="w" >
 100
 </property>
 <property type="int" id="width" mode="w" >
 500
+</property>
+<property type="string" id="units" mode="w" >
+Connections/Sec
 </property>
 <property type="boolean" id="log" mode="w" >
 False
@@ -465,7 +563,7 @@ True
 3
 </property>
 <tomanycont id='graphPoints'>
-<object id='client_conn' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<object id='Client Connections' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -500,6 +598,9 @@ AVERAGE
 <property type="int" id="width" mode="w" >
 500
 </property>
+<property type="string" id="units" mode="w" >
+Requests/Sec
+</property>
 <property type="boolean" id="log" mode="w" >
 False
 </property>
@@ -519,7 +620,7 @@ True
 2
 </property>
 <tomanycont id='graphPoints'>
-<object id='client_req' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<object id='Client Requests' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -554,6 +655,9 @@ AVERAGE
 <property type="int" id="width" mode="w" >
 500
 </property>
+<property type="string" id="units" mode="w" >
+Objects
+</property>
 <property type="boolean" id="log" mode="w" >
 False
 </property>
@@ -573,7 +677,7 @@ True
 5
 </property>
 <tomanycont id='graphPoints'>
-<object id='n_expired' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<object id='Expired Objects' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -608,6 +712,9 @@ AVERAGE
 <property type="int" id="width" mode="w" >
 500
 </property>
+<property type="string" id="units" mode="w" >
+Operations/Sec
+</property>
 <property type="boolean" id="log" mode="w" >
 False
 </property>
@@ -627,7 +734,7 @@ True
 4
 </property>
 <tomanycont id='graphPoints'>
-<object id='n_gunzip' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<object id='gunzip' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
 <property type="long" id="sequence" mode="w" >
 1
 </property>
@@ -656,7 +763,7 @@ Varnish3Stats_n_gunzip
 AVERAGE
 </property>
 </object>
-<object id='n_gzip' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<object id='gzip' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>

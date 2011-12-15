@@ -84,12 +84,27 @@ the number of SSH calls needed to a minimum.
 
 Change History
 ==============
-* TBD
+* 1.0
    * Initial Release
  
 Screenshots
 ===========
-Coming Soon....   
+|Varnish3_Cache_Hit_Rate|
+|Varnish3_CacheHits_vs_Misses|
+|Varnish3_Client_Connections|
+|Varnish3_Client_Requests|
+|Varnish3_Expired_Objects|
+|Varnish3_Backend_Too_Late|
+
     
 .. External References Below. Nothing Below This Line Should Be Rendered
+
 .. _Latest Package for Python 2.6: http://github.com/downloads/dpetzel/ZenPacks.community.Varnish3/ZenPacks.community.Varnish3-1.0-py2.6.egg
+
+.. |Varnish3_Cache_Hit_Rate| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Cache_Hit_Rate.PNG
+.. |Varnish3_CacheHits_vs_Misses| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_CacheHits_vs_Misses.PNG
+.. |Varnish3_Client_Connections| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Client_Connections.PNG
+.. |Varnish3_Client_Requests| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Client_Requests.PNG
+.. |Varnish3_Expired_Objects| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Expired_Objects.PNG
+.. |Varnish3_Backend_Too_Late| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Backend_Too_Late.PNG
+.. |Varnish3_GZIP_Operations| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_GZIP_Operations.PNG
