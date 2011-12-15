@@ -39,8 +39,9 @@ class ZenPack(ZenPackBase):
         @see: http://dev.zenoss.com/trac/ticket/7551
         @see: http://community.zenoss.org/message/59914
         """
+        logger.info("Resetting rrdmin to 0 on DERIVE datapoints")
         for template in self.dmd.Devices.getAllRRDTemplates():
-            if template.id == TEMPLATE_NAME:
+            if template.id == self.TEMPLATE_NAME:
                 for dp in template.getRRDDataPoints():
                     if dp.rrdtype == "DERIVE":
                         dp.rrdmin = 0 
