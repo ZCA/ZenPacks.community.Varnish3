@@ -52,7 +52,7 @@ class VarnishStat(CommandParser):
                 err_msg = "You've requested a data point %s for which " + \
                     "there is no matching stat name. Please double check " + \
                     "Your data points names against varnishstat output"
-                logger.error(err_msg)
+                logger.error(err_msg, dp.id)
   
     def _xml_to_stat_list(self, xml_string):
         """
@@ -101,13 +101,30 @@ class VarnishStat(CommandParser):
         
         """
         return_dict = {}
+        
         for stat in stat_list:
+            b_process = True
             if 'type' in stat:
                 if stat['type'] == "VBE" or stat['type'] == "LCK":
+                    b_process = False
                     continue
-            else:
+                else:
+                    b_process = True
+            if b_process == True:
                 if 'name' in stat:
-                    name = stat['name']
+                    name = ""
+                    if 'ident' in stat:
+                        """
+                        Some Stats share a common <name> node
+                        for those we need to ensure unique names
+                        since the name is the key in our stat dictionary.
+                        It seems that such stats have an additional <ident>
+                        node. Lets combine the ident with the name to ensure
+                        we generate a unique key
+                        """
+                        name = "-".join([stat['ident'], stat['name']])
+                    else:
+                        name = stat['name']
                     #No point in duplicating the name
                     #drop it from the new child dict
                     del(stat['name'])
