@@ -123,6 +123,7 @@ Change History
      share the same name value
    * Updated install method to work around `Trac Ticket 7551`_ and enforce an
      rrdmin of 0 on all DERIVE datapoints in the provied template.
+   * Added varnishd OSProcess
  
 Screenshots
 ===========
