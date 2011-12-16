@@ -83,12 +83,46 @@ When adding datapoints, be sure to add them to the existing datasource. There is
 no need to create a second datasource. Keeping a single datasource will keep 
 the number of SSH calls needed to a minimum.
 
+Handling Statistics With The Same Name
+======================================
+When dumping the *varnishstat* output via XML, some stats will actually have
+the same value in their <name> node. Since each datapoint needs to have a unique
+name the command parser will do some alerations to ensure uniqueness. The parser
+will prepend the value of the <ident> node followed by a "-". Lets look at a 
+real world example::
+
+   <stat>
+      <type>SMA</type>
+      <ident>s0</ident>
+      <name>g_bytes</name>
+      <value>1973411487</value>
+      <flag>i</flag>
+      <description>Bytes outstanding</description>
+   </stat>
+   <stat>
+      <type>SMA</type>
+      <ident>Transient</ident>
+      <name>g_bytes</name>
+      <value>297633</value>
+      <flag>i</flag>
+      <description>Bytes outstanding</description>
+   </stat>
+
+In this example the command parser will produce the name "s0-g_bytes" for the
+first stat and "Transient-g_bytes" for the second one. Its important to 
+understand this if you intend to add any additional datapoints to the template.
 
 
 Change History
 ==============
 * 1.0
    * Initial Release
+* 1.1
+   * Some new datapoints and graphs on monitoring template
+   * Added logic into the parser to handle conditions when multiple stats
+     share the same name value
+   * Updated install method to work around `Trac Ticket 7551`_ and enforce an
+     rrdmin of 0 on all DERIVE datapoints in the provied template.
  
 Screenshots
 ===========
@@ -103,6 +137,7 @@ Screenshots
 .. External References Below. Nothing Below This Line Should Be Rendered
 
 .. _Latest Package for Python 2.6: http://github.com/downloads/dpetzel/ZenPacks.community.Varnish3/ZenPacks.community.Varnish3-1.0-py2.6.egg
+.. _Trac Ticket 7551: http://dev.zenoss.com/trac/ticket/7551
 
 .. |Varnish3_Cache_Hit_Rate| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Cache_Hit_Rate.PNG
 .. |Varnish3_CacheHits_vs_Misses| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_CacheHits_vs_Misses.PNG
