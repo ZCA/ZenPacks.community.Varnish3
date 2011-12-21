@@ -17,9 +17,12 @@ Components
 The ZenPack has the following: 
 
 * A new command parser
-   * ZenPacks.community.Varnish3.parsers.VarnishStat
+
+  * ZenPacks.community.Varnish3.parsers.VarnishStat
+
 * A new monitoring template
-   * Varnish3 in /Server/Linux
+
+  * Varnish3 in /Server/Linux
 
 Requirements & Dependencies
 ===========================
@@ -41,8 +44,8 @@ Normal Installation (packaged egg)
 Copy the downloaded .egg to your Zenoss server and run the following commands as the zenoss
 user::
 
-   zenpack --install <package.egg>
-   zenoss restart
+    zenpack --install <package.egg>
+    zenoss restart
     
 Developer Installation (link mode)
 ----------------------------------
@@ -116,14 +119,17 @@ understand this if you intend to add any additional datapoints to the template.
 Change History
 ==============
 * 1.0
-   * Initial Release
+
+  * Initial Release
+
 * 1.1
-   * Some new datapoints and graphs on monitoring template
-   * Added logic into the parser to handle conditions when multiple stats
-     share the same name value
-   * Updated install method to work around `Trac Ticket 7551`_ and enforce an
-     rrdmin of 0 on all DERIVE datapoints in the provied template.
-   * Added varnishd OSProcess
+
+  * Some new datapoints and graphs on monitoring template
+  * Added logic into the parser to handle conditions when multiple stats
+    share the same name value
+  * Updated install method to work around `Trac Ticket 7551`_ and enforce an
+    rrdmin of 0 on all DERIVE datapoints in the provied template.
+  * Added varnishd OSProcess
  
 Screenshots
 ===========
