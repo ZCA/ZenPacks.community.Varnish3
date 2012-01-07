@@ -53,7 +53,7 @@ If you wish to further develop and possibly contribute back to the Varnish3
 ZenPack you should clone the git repository, then install the ZenPack in
 developer mode using the following commands::
 
-    git clone git://github.com/zenoss/ZenPacks.community.Varnish3.git
+    git clone git://github.com/dpetzel/ZenPacks.community.Varnish3.git
     zenpack --link --install ZenPacks.community.Varnish3
     zenoss restart
     
