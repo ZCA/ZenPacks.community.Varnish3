@@ -128,7 +128,7 @@ Change History
   * Added logic into the parser to handle conditions when multiple stats
     share the same name value
   * Updated install method to work around `Trac Ticket 7551`_ and enforce an
-    rrdmin of 0 on all DERIVE datapoints in the provied template.
+    rrdmin of 0 on all DERIVE datapoints in the provided template.
   * Added varnishd OSProcess
  
 Screenshots
