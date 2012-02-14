@@ -54,7 +54,7 @@ If you wish to further develop and possibly contribute back to the Varnish3
 ZenPack you should clone the git repository, then install the ZenPack in
 developer mode using the following commands::
 
-    git clone git://github.com/dpetzel/ZenPacks.community.Varnish3.git
+    git clone git://github.com/ZCA/ZenPacks.community.Varnish3.git
     zenpack --link --install ZenPacks.community.Varnish3
     zenoss restart
     
@@ -144,14 +144,14 @@ Screenshots
     
 .. External References Below. Nothing Below This Line Should Be Rendered
 
-.. _Latest Package for Python 2.6: http://github.com/downloads/dpetzel/ZenPacks.community.Varnish3/ZenPacks.community.Varnish3-1.1-py2.6.egg
-.. _Latest Package for Python 2.7: http://github.com/downloads/dpetzel/ZenPacks.community.Varnish3/ZenPacks.community.Varnish3-1.1-py2.7.egg
+.. _Latest Package for Python 2.6: http://github.com/downloads/ZCA/ZenPacks.community.Varnish3/ZenPacks.community.Varnish3-1.1-py2.6.egg
+.. _Latest Package for Python 2.7: http://github.com/downloads/ZCA/ZenPacks.community.Varnish3/ZenPacks.community.Varnish3-1.1-py2.7.egg
 .. _Trac Ticket 7551: http://dev.zenoss.com/trac/ticket/7551
 
-.. |Varnish3_Cache_Hit_Rate| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Cache_Hit_Rate.PNG
-.. |Varnish3_CacheHits_vs_Misses| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_CacheHits_vs_Misses.PNG
-.. |Varnish3_Client_Connections| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Client_Connections.PNG
-.. |Varnish3_Client_Requests| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Client_Requests.PNG
-.. |Varnish3_Expired_Objects| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Expired_Objects.PNG
-.. |Varnish3_Backend_Too_Late| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Backend_Too_Late.PNG
-.. |Varnish3_GZIP_Operations| image:: http://github.com/dpetzel/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_GZIP_Operations.PNG
+.. |Varnish3_Cache_Hit_Rate| image:: http://github.com/ZCA/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Cache_Hit_Rate.PNG
+.. |Varnish3_CacheHits_vs_Misses| image:: http://github.com/ZCA/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_CacheHits_vs_Misses.PNG
+.. |Varnish3_Client_Connections| image:: http://github.com/ZCA/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Client_Connections.PNG
+.. |Varnish3_Client_Requests| image:: http://github.com/ZCA/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Client_Requests.PNG
+.. |Varnish3_Expired_Objects| image:: http://github.com/ZCA/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Expired_Objects.PNG
+.. |Varnish3_Backend_Too_Late| image:: http://github.com/ZCA/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_Backend_Too_Late.PNG
+.. |Varnish3_GZIP_Operations| image:: http://github.com/ZCA/ZenPacks.community.Varnish3/raw/master/docs/screen_shots/Varnish3_GZIP_Operations.PNG
