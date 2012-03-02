@@ -131,6 +131,9 @@ Change History
   * Updated install method to work around `Trac Ticket 7551`_ and enforce an
     rrdmin of 0 on all DERIVE datapoints in the provided template.
   * Added varnishd OSProcess
+* 1.2
+
+  * Added varnishncsa and varnishlog processes
  
 Screenshots
 ===========

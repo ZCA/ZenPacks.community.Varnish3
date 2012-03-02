@@ -25,10 +25,6 @@ class ZenPack(ZenPackBase):
     def install(self, app):
         """
         Extend base install() in order to run custom code during installation
-        
-        This is currently here simply as an indicator as to how/where
-            this extension would occur. In this particular pack we have
-            no custom installation code.
         """
         logger.debug("Executing custom installation code")
         super(ZenPack, self).install(app)
