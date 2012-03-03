@@ -133,8 +133,10 @@ Change History
   * Added varnishd OSProcess
 * 1.2
 
-  * Added varnishncsa and varnishlog processes
- 
+  * Added varnishncsa and varnishlog processes: https://github.com/ZCA/ZenPacks.community.Varnish3/issues/3
+  * Updated storage graph to be a little less confusing.
+  * Fixed Hit Graph so it better aligns with varnishstat output: https://github.com/ZCA/ZenPacks.community.Varnish3/issues/2
+
 Screenshots
 ===========
 |Varnish3_Cache_Hit_Rate|
